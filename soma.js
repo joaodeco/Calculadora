@@ -1,8 +1,7 @@
-const executar = require('./executar')
 
-function soma(){
-    let resultadoSoma = primeroNum + sugundoNum
-    console.log(`O resultado é ${resultadoSoma}.`)
+function soma(primeiroNum, segundoNum){
+    let resultadoSoma = primeiroNum + segundoNum
+    return resultadoSoma
 }
 
-module.exports = {soma}
+module.exports = { soma }

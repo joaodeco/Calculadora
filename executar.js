@@ -1,10 +1,13 @@
 const prompt = require('prompt-sync')({sigint: true});
-const soma = require ('./soma')
-const subtracao = require ('./subtracao')
-const multiplicacao = require ('./multiplicacao')
-const divisao = require ('./divisao')
-const porcentagem = require ('./porcentagem')
+const {soma} = require ('./soma')
+const {subtracao} = require ('./subtracao')
+const {multiplicacao} = require ('./multiplicacao')
+const {divisao} = require ('./divisao')
+const {porcentagem} = require ('./porcentagem')
 
+executar()
+
+function executar(){
 
 let primeiroNum = prompt('Qual seu primeiro número?')
 
@@ -21,29 +24,45 @@ let primeiroNum = prompt('Qual seu primeiro número?')
 
     `)
 
+let resultado
+
 let opcao = prompt('Digite o simbolo sa sua operação:');
 
 let segundoNum = prompt('Qual seu segundo número?')
 
+primeiroNum = parseFloat(primeiroNum)
+segundoNum = parseFloat(segundoNum)
+
+if(typeof(primeiroNum) != 'number' || typeof(segundoNum) != 'number'){
+
+    console.log(`opção inválida`)
+    executar()
+
+}else{
+
+
 switch(opcao){
     case'+':
-        console.log(soma(parseFloat(primeiroNum), parseFloat(segundoNum)))
+        resultado = soma(primeiroNum, segundoNum)
         break
     case'-':
-        console.log(subtracao(parseFloat(primeiroNum), parseFloat(segundoNum)))
+        resultado = subtracao(primeiroNum, segundoNum)
         break
     case'/':
-        console.log(divisao(parseFloat(primeiroNum), parseFloat(segundoNum)))
+        resultado = divisao(primeiroNum, segundoNum)
         break
-    case'x':
-        console.log(multiplicacao(parseFloat(primeiroNum), parseFloat(segundoNum)))
+    case'*':
+        resultado = multiplicacao(primeiroNum, segundoNum)
         break
     case'%':
-        console.log(porcentagem(parseFloat(primeiroNum), parseFloat(segundoNum)))
+        resultado = porcentagem(primeiroNum, segundoNum)
         break
     case'Sair':
         break
     default:
         console.log('Caractere invalido!! Tente novamente')
         executar()
+    }
+    console.log(resultado)
+}
 }

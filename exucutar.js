@@ -1,4 +1,10 @@
 const prompt = require('prompt-sync')({sigint: true});
+const multiplicação = require('./multiplicação')
+const divisão = require('./divisão')
+const soma = require('./soma')
+const subtração = require('./subtração')
+const porcentagem = require('./porcentagem')
+
 
 executar()
 
@@ -6,7 +12,7 @@ function executar(){
     console.log(`
     Olá essas são as nossas operações que estão funcionando.
 
-    + (adição)
+    + (soma)
     - (subtração)
     / (divisão)
     x (multiplicação)
@@ -42,3 +48,7 @@ switch(opcao){
         console.log('Caractere invalido!! Tente novamente')
         executar()
 }
+
+let primeiroNum = prompt('Qual seu primeiro número?')
+
+let segundoNum = prompt('Qual seu segundo número?')

@@ -4,3 +4,5 @@ function soma(){
     let resultadoSoma = primeroNum + sugundoNum
     console.log(`O resultado é ${resultadoSoma}.`)
 }
+
+module.exports = {soma}

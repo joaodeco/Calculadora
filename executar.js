@@ -26,7 +26,7 @@ let primeiroNum = prompt('Qual seu primeiro número?')
 
 let resultado
 
-let opcao = prompt('Digite o simbolo sa sua operação:');
+let opcao = prompt('Digite o simbolo da sua operação:');
 
 let segundoNum = prompt('Qual seu segundo número?')
 

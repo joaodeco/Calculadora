@@ -51,7 +51,7 @@ switch(opcao){
     case'/':
         resultado = divisao(primeiroNum, segundoNum)
         break
-    case'*':
+    case'x':
         resultado = multiplicacao(primeiroNum, segundoNum)
         break
     case'%':
